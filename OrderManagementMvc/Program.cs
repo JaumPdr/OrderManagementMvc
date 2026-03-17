@@ -1,7 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using OrderManagementMvc.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Registra o AppDbContext no container de dependência.
+// Configura o uso do SQL Server como banco de dados.
+// Utiliza a string de conexão "DefaultConnection" definida na configuração.
+builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 

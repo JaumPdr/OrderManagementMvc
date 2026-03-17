@@ -9,7 +9,7 @@ namespace OrderManagementMvc.Models
         public Customer Customer { get; set; }
         public OrderStatus Status { get; set; }
         public List<OrderItem> Items { get; private set; } = new List<OrderItem>();
-
+        
         public Order() { }
 
         public Order(Customer customer, OrderStatus status)
