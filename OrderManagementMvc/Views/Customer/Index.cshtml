@@ -1,0 +1,31 @@
+﻿@model IEnumerable<OrderManagementMvc.Models.Customer>
+
+@{
+    ViewData["Title"] = "Customer";
+}
+
+<h2>Customers</h2>
+
+<a asp-action="Create" class="Customers">New Customer</a>
+
+<table class="table table-striped">
+    <thead> 
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Cpf</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Name</td>
+                <td>@customer.Email</td>
+                <td>@customer.Telefone</td>
+                <td>@customer.Cpf</td>
+            </tr>
+        }
+    </tbody>
+</table>
