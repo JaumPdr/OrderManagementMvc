@@ -1,12 +1,16 @@
 ﻿@model OrderManagementMvc.Models.Customer
 
 @{
-    ViewData["Title"] = "Create Customer";
+    ViewData["Title"] = "Edit Customer";
 }
 
-<h2>Create Customer</h2>
+<h2>Edit Customer</h2>
 
-<form asp-action="Create" method="post">
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="Id" />
 
     <div class="form-group">
         <label>Name</label>
